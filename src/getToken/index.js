@@ -17,13 +17,13 @@ function getToken(params) {
             return
           }
         }
-        const appid = params.appid
-        const secret = params.secret
+        const { appid, secret } = params
         axios
           .get(
             `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`
           )
           .then((res) => {
+            console.log(res.data);
             if (res.data && res.data.errcode) {
               reject(data)
               return

@@ -8,7 +8,7 @@ async function start() {
   try {
     access_token = await getToken(params)
   } catch (error) {
-    console.log(error)
+    console.log('error', error)
     process.exit(0)
   }
 
